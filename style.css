@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300;500;700&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+section {
+    scroll-margin-top: 80px; /* Adjust the value to match the height of your fixed menu */
+}
+
+/* Estilos gerais para todo o layout */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FEFAF3;
+}
+
+
+/* Estilo para o cabeçalho (menu) */
+header {
+    background-color: #FEFAF3;
+    color: #000;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    
+   
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+    
+}
+
+header .logo img {
+    max-width: 350px;
+    height: auto;
+    margin-left: 50px;
+    padding-left: 100px;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 150px;
+   
+    
+}
+
+header ul li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
+    text-decoration: none; /* Remover sublinhado */
+    color: #000; /* Cor dos itens do menu */
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-right: 50px;
+    position: relative;
+}
+
+header ul li a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ED4D1B;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.mobile-menu-icon {
+    display: none; /* Ocultar o ícone no início para desktop */
+    cursor: pointer;
+    font-size: 30px;
+    color: #000; /* Cor do ícone do menu */
+    margin-right: 20px;
+    
+}
+
+/* Media query para dispositivos móveis e tablets */
+@media screen and (max-width: 768px) {
+    header .logo img {
+        max-width: 200px;
+        margin-left: 20px;
+        padding-left: 0;
+    }
+
+    header ul {
+        margin-top: 20px;
+        display: none; /* Ocultar o menu */
+        flex-direction: column;
+        background-color: #FEFAF3; /* Cor de fundo do menu móvel */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    header ul.active {
+        display: flex; /* Exibir o menu ao clicar no ícone */
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Exibir o ícone do menu */
+        cursor: pointer;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-right: 20px;
+    }
+}
+
+
+
+.left {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+
+}
+
+
+/* Estilos para a seção Home (Desktop) */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 0;
+   
+   
+}
+
+#home .left {
+    flex: 1;
+    padding: 150px;
+}
+
+#home h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#home .highlight {
+    color: #ED4D1B; 
+    font-weight: bold;
+}
+
+#home p {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#home button {
+    background-color: #ED4D1B; 
+    color: #fff; /* Cor do texto do botão */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efeito de hover */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#home button:hover {
+    background-color: #FF753E; /* Cor laranja mais clara no hover */
+}
+
+#home .right img {
+    max-width: 600px;
+    height: auto;
+    margin-right: 150px;
+    padding-right: 50px;
+    padding-top: 50px;
+
+}
+
+
+/* Media query para dispositivos móveis e tablets */
+@media screen and (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    #home .left {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    #home h1 {
+        font-size: 28px;
+        margin-top: 50px;
+    }
+
+    #home .highlight {
+        font-size: 28px;
+        margin-top: -5px;
+    }
+
+    #home p {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #home button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #home .right img {
+        max-width: 100%;
+        margin: 0 auto; 
+        padding: 25px;
+        display: block; /* Impedir margens indesejadas em dispositivos móveis */
+    }
+}
+
+
+/* Estilos para a seção About Us */
+#about {
+    background-color: #FEFAF3; /* Cor de fundo */
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#about h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #ED4D1B;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+#about p {
+    color: #000; 
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 50px;
+    }
+    #about h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+}
+
+
+/* Estilos para a seção Menu */
+#menu {
+    background-color: #FEFAF3; 
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#menu h1 {
+    color: #ED4D1B; 
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+#menu h2 {
+    color: #000; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    text-align: left; 
+    margin-top: 30px;
+}
+
+.menu-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Quebrar em várias linhas */
+    margin-top: 20px;
+}
+
+.menu-card {
+    flex: 0 0 calc(33.333% - 20px); /* Três cards por linha com espaçamento */
+    background-color:  #fff;
+   
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.menu-card img {
+    max-width: 100%;
+    height: auto;
+    width: 340px; 
+    padding: 5px;
+    
+    
+}
+
+.menu-card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    margin: 20px;
+}
+
+.menu-card .subtitle {
+    font-size: 24px; 
+    color: #ED4D1B; 
+}
+
+
+.btn-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px; 
+    margin-top: 20px;
+    text-decoration: none;
+
+
+}
+
+.menubutton button {
+    background-color: #FBEADF; 
+    color: #ED4D1B; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.btn-right button {
+    background-color: #ED4D1B; 
+    color: #fff; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 80px;
+    margin-right: -20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-right button:hover, .menubutton button:hover {
+    background-color: #FF753E; 
+    color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .btn-right {
+        justify-content: center;
+
+    }
+
+    .btn-right button {
+        padding: 10px 50px;
+    }
+
+    .menu-cards {
+        justify-content: center;
+       
+        
+    }
+
+    .menu-card {
+        margin-top: 20px;
+        
+    }
+
+    #menu h1 {
+        text-align: center;
+        font-size: 45px;
+    }
+
+    #menu h2 {
+        margin-top: 60px;
+        font-size: 40px;
+        text-align: center;
+    }
+}
+  /* CONTACT DESKTOOP */
+
+#contact {
+    background-color: #FEFAF3; /* Cor de fundo */
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+#contact h1 {
+    color: #ED4D1B; 
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.contact-content .right{
+    margin-left: 130px;
+}
+.contact-content .right h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+   
+}
+
+.contact-content .right p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #ED4D1B;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    text-align: right;
+    margin-top: -121px;
+}
+
+.contact-details h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #FF5733;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+
+.contact-icons p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.ph.ph-map-pin,
+.ph.ph-instagram-logo {
+    font-size: 20px; /* Tamanho do ícone */
+    color: #000;
+    font-weight: 700;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.left img {
+    width: 280px;
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    #contact {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    #contact h1 {
+        font-size: 45px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .left img {
+        width: 150px;
+        margin-bottom: 50px;
+    }
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-content .right {
+        margin-left: 0;
+    }
+
+    .contact-content .right h2 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .contact-content .right p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .contact-details {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .contact-details h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-details p {
+        font-size: 18px;
+        margin-left: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contact-icons p {
+        margin-bottom: 10px;
+    }
+
+    .ph.ph-map-pin,
+    .ph.ph-instagram-logo {
+        font-size: 24px;
+        color: #FF5733;
+        margin-right: 5px;
+    }
+}
+
+
+
+
+footer {
+    background-color: #ED4D1B;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+/* Adicione um media query para estilos móveis */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 20px 10px; /* Reduza o preenchimento nos lados */
+    }
+
+    footer p {
+        font-size: 16px; /* Reduza o tamanho da fonte dos parágrafos */
+    }
+}
+
+/* Estilo do contêiner do mapa */
+
+.map {
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+.map {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Isso define uma proporção 16:9 (altere conforme necessário) */
+    overflow: hidden;
+}
+
+/* Estilo do iframe do mapa */
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+}
